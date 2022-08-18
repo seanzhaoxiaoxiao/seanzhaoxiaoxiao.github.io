@@ -188,13 +188,6 @@
   </url>
   
   <url>
-    <loc>https://seanzhaoxiaoxiao.github.io/tags/%E5%8F%91%E5%B1%95/</loc>
-    <lastmod>2022-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://seanzhaoxiaoxiao.github.io/tags/%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -203,6 +196,13 @@
   
   <url>
     <loc>https://seanzhaoxiaoxiao.github.io/tags/%E6%95%88%E7%8E%87/</loc>
+    <lastmod>2022-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://seanzhaoxiaoxiao.github.io/tags/%E5%8F%91%E5%B1%95/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -246,14 +246,14 @@
   </url>
   
   <url>
-    <loc>https://seanzhaoxiaoxiao.github.io/categories/%E5%85%B3%E4%BA%8E%E7%8C%8E%E5%A4%B4/</loc>
+    <loc>https://seanzhaoxiaoxiao.github.io/categories/%E8%81%8C%E5%9C%BA%E9%97%AE%E7%AD%94/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://seanzhaoxiaoxiao.github.io/categories/%E8%81%8C%E5%9C%BA%E9%97%AE%E7%AD%94/</loc>
+    <loc>https://seanzhaoxiaoxiao.github.io/categories/%E5%85%B3%E4%BA%8E%E7%8C%8E%E5%A4%B4/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
