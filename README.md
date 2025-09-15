@@ -10,6 +10,10 @@
 ![alt text](img/image2.png)
 ![alt text](img/image3.png)
 
+### Activity 3
+![alt text](img/image4.png)
+![alt text](img/image5.png)
+
 <!-- ![GitHub stars](https://img.shields.io/github/stars/varadbhogayata/varadbhogayata.github.io) 
 ![GitHub forks](https://img.shields.io/github/forks/varadbhogayata/varadbhogayata.github.io)
 [![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/varadbhogayata/varadbhogayata.github.io/commits/master)
