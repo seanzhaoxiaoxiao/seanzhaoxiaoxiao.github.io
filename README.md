@@ -4,7 +4,7 @@
 > This repo is a clone of https://github.com/varadbhogayata/varadbhogayata.github.io
 
 ### Activity 1
-
+![alt text](img/image.png)
 
 <!-- ![GitHub stars](https://img.shields.io/github/stars/varadbhogayata/varadbhogayata.github.io) 
 ![GitHub forks](https://img.shields.io/github/forks/varadbhogayata/varadbhogayata.github.io)
