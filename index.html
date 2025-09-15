@@ -476,71 +476,107 @@ GLM-4, then deployed it as a web app for employee training and documentation cha
     </section>
 
     <!-- Fourth Section: Projects -->
-    <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text teal">Projects</h3>
       <div class="container">
-        <div class="row">
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a class="teal-text hoverline">Skimeter Smart Snow Goggles</a></span>
-                </p>
-                <p class="brown-text"> University of Toronto Hatchery </p>
-                <p>
-                  May. 2024 - Present
-                </p>
-
-                <ul>
-                  <p>
-                  <ul>
-                    <li>Conducted 100+ surveys and 10+ interviews on the snow sportswear market and verified the market gap</li>
-                    <li>Drafted a business plan based on the FEELTM House model and a preliminary cash flow projection to support our pitch</li>
-                    <li>Performed three mock-up pitches with the advisory board to finalize our business model</li>
-                    <li>Prototyped a smart snow goggle via Raspberry Pi to validate our design concepts and functionalities</li>
-                  </ul>
-                  </p>
-                </ul>
-              </div>
-            </div>
-
-            
+        <!-- Recent Projects Section -->
+        <div id="recent-projects">
+          <h4 class="brown-text light">Recent Projects</h4>
+          <div class="row" id="recent-projects-list"></div>
+          <div class="center-align" style="margin: 20px 0;">
+            <button id="load-more-projects" class="btn waves-effect waves-light teal" style="display:none;">Load More</button>
           </div>
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a class="teal-text hoverline">Geographic Information System Project</a></span>
-                </p>
-                <p class="brown-text"> University of Toronto </p>
-                <p>
-                  Jan. 2023 - Apr. 2023
-                </p>
-
-                <ul>
-                  <p>
-                  <ul>
-                    <li>Worked in a group of 3 to develop a large geographic information system like Google Maps in C++, utilizing the OSM
-(OpenStreetMap) database and API to draw geographical locations</li>
-                    <li>Collaborated using Git, learning effective design & communication skills for large-scale software development projects</li>
-                    <li>Designed the front-end user interface including rendering of images and interaction of all map features using a GTK
-overlay, EZGL graphics package and STL C++ library</li>
-                    <li>Implemented Dijkstra's, A*, and 2-opt Algorithms to help determine the ideal path between multiple locations on the
-map and created elaborate data structures for easy data retrieval</li>
-                  </ul>
-                  </p>
-
-                </ul>
-              </div>
-            </div>
-
-            
-          </div>
-
-          <!-- ************* -->
         </div>
+        <!-- Remaining Projects Section -->
+        <div id="all-projects-list" class="row"></div>
       </div>
     </section>
+
+    <script>
+      // Project data array
+      const projects = [
+        {
+          title: "Skimeter Smart Snow Goggles",
+          org: "University of Toronto Hatchery",
+          date: "May. 2024 - Present",
+          startYear: 2024,
+          description: [
+            "Conducted 100+ surveys and 10+ interviews on the snow sportswear market and verified the market gap",
+            "Drafted a business plan based on the FEELTM House model and a preliminary cash flow projection to support our pitch",
+            "Performed three mock-up pitches with the advisory board to finalize our business model",
+            "Prototyped a smart snow goggle via Raspberry Pi to validate our design concepts and functionalities"
+          ]
+        },
+        {
+          title: "Affordable and Clean Energy Project",
+          org: "Global Challenge Lab 2023",
+          date: "Jul. 2023 - Aug. 2023",
+          startYear: 2023,
+          description: [
+            "Competed in a four-person group to develop a solution that advances United Nations Sustainable Development Goal #7: Affordable and Clean Energy.",
+            "Utilized Slack for collaboration, learning effective communication skills within a research-heavy project environment.",
+            "Proposed a prototype solution that integrated pumped-storage hydropower and biofuel technology into a hydroelectric dam. The solution also included an AI model for silt prediction and power management. The final proposal was ranked among the top 10 submissions."
+          ]
+        },
+        {
+          title: "Geographic Information System Project",
+          org: "University of Toronto",
+          date: "Jan. 2023 - Apr. 2023",
+          startYear: 2023,
+          description: [
+            "Worked in a group of 3 to develop a large geographic information system like Google Maps in C++, utilizing the OSM (OpenStreetMap) database and API to draw geographical locations",
+            "Collaborated using Git, learning effective design & communication skills for large-scale software development projects",
+            "Designed the front-end user interface including rendering of images and interaction of all map features using a GTK overlay, EZGL graphics package and STL C++ library",
+            "Implemented Dijkstra's, A*, and 2-opt Algorithms to help determine the ideal path between multiple locations on the map and created elaborate data structures for easy data retrieval"
+          ]
+        }
+      ];
+
+      // Helper to create project card HTML
+      function createProjectCard(project) {
+        return `
+          <div class="col s12 m6 l6">
+            <div class="card">
+              <div class="card-content">
+                <p>
+                  <span class="card-title"><a class="teal-text hoverline">${project.title}</a></span>
+                </p>
+                <p class="brown-text"> ${project.org} </p>
+                <p>${project.date}</p>
+                <ul>
+                  ${project.description.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Render recent projects (last 2 years)
+      function renderRecentProjects() {
+        const currentYear = 2025;
+        const recentProjects = projects.filter(p => p.startYear >= currentYear - 1);
+        const recentHtml = recentProjects.map(createProjectCard).join('');
+        document.getElementById('recent-projects-list').innerHTML = recentHtml;
+        // Show load more button if there are older projects
+        const hasOlder = projects.some(p => p.startYear < currentYear - 1);
+        document.getElementById('load-more-projects').style.display = hasOlder ? 'inline-block' : 'none';
+      }
+
+      // Render all remaining (older) projects
+      function renderAllProjects() {
+        const currentYear = 2025;
+        const olderProjects = projects.filter(p => p.startYear < currentYear - 1);
+        const olderHtml = olderProjects.map(createProjectCard).join('');
+        document.getElementById('all-projects-list').innerHTML = olderHtml;
+        document.getElementById('load-more-projects').style.display = 'none';
+      }
+
+      // Event listener for Load More
+      document.addEventListener('DOMContentLoaded', function() {
+        renderRecentProjects();
+        document.getElementById('load-more-projects').addEventListener('click', renderAllProjects);
+      });
+    </script>
 
     <!-- Fifth Section: Skills -->
     <section id="skills" class="section scrollspy">
